@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+    <div class="container has-text-centered mt-5">
+        <div class="columns">
+            <div class="column">
+                <div>
+                    <h2 class="subtitle mb-3 is-size-4">Repérage du jour</h2>
+                </div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Monnaie</th>
+                        <th><abbr title="Played">Pourcentage variation market cap sur 24h</abbr>
+                        </th>
+                        <th><abbr title="Won">Pourcentage variation prix sur 24h</abbr></th>
+                        <th><abbr title="Drawn">Total jetons disponible</abbr></th>
+                        <th><abbr title="volume">Volume sur 24H</abbr></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for key,histo in history %}
+                        {% if histo['pourcentage_market_cap'] > 20  %}
+                            {% set colorText = 'is-selected' %}
+                        {% else %}
+                            {% set colorText = '' %}
+                        {% endif %}
+                        <tr class="{{ colorText }}">
+                            <td class="has-text-w">{{ key }}</td>
+                            <td>{{ histo['pourcentage_market_cap'] }}</td>
+                            <td>{{ histo['price_change_pourcentage_24h'] }}</td>
+                            <td>{{ histo['max_supply'] }}</td>
+                            <td>{{ histo['volume_day'] }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

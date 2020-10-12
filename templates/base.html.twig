@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sherlock Invest{% endblock %}</title>
+    {{ encore_entry_link_tags('app') }}
+    {{ encore_entry_link_tags('Bulma') }}
+
+
+    {% block stylesheets %}{% endblock %}
+</head>
+<header>
+    <section class="section has-background-grey-dark">
+        <div class="container full-width has-background-grey-dark">
+            <h1 class="title is-1 has-text-centered   has-text-info">Sherlock Invest</h1>
+        </div>
+    </section>
+</header>
+<body>
+{% block body %}
+
+
+
+{% endblock %}
+
+{{ encore_entry_script_tags('app') }}
+{% block javascripts %}{% endblock %}
+</body>
+<footer class="footer  has-background-grey-dark">
+    <div class="columns">
+        <div class="column">
+            <p class="strong has-text-centered has-text-info">
+                © sherlock invest 2020
+            </p>
+        </div>
+    </div>
+</footer>
 </html>

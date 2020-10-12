@@ -1,0 +1,41 @@
+<nav class="navbar is-primary" >
+    <div class="container">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu">
+            <div class="navbar-start">
+                <a href="/bulma-clean-theme/" class="navbar-item is-active">Accueil</a>
+                {# <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="/bulma-clean-theme/" class="navbar-link ">Pages</a>
+                        <div class="navbar-dropdown">
+                            <a href="/bulma-clean-theme/page-1/" class="navbar-item ">Page With Sidebar</a>
+                            <a href="/bulma-clean-theme/page-2/" class="navbar-item ">Page No Sidebar</a>
+                            <a href="/bulma-clean-theme/page-3/" class="navbar-item ">Page With Menubar</a>
+                            <a href="/bulma-clean-theme/page-4/" class="navbar-item ">Page With Tabs</a>
+                            <a href="/bulma-clean-theme/page-5/" class="navbar-item ">Page Without Footer</a>
+                            <a href="/bulma-clean-theme/page-without-hero/" class="navbar-item ">Page Without Hero</a>
+                            <a href="/bulma-clean-theme/page-with-contents/" class="navbar-item ">Page With Contents</a>
+                            <a href="/bulma-clean-theme/page-with-video/" class="navbar-item ">Page With Video</a>
+                            <a href="/bulma-clean-theme/page-with-image-modal/" class="navbar-item ">Page With Image Modal</a>
+                            <a href="/bulma-clean-theme/landing/" class="navbar-item ">Landing Page With Callouts</a>
+                            <a href="/bulma-clean-theme/sponsors/" class="navbar-item ">Sponsors Page</a>
+                            <a href="/bulma-clean-theme/gallery/" class="navbar-item ">Image Gallery</a>
+                        </div>
+                    </div> #}
+                <a href="/bulma-clean-theme/showcase/" class="navbar-item ">Twitter</a>
+                <a href="/bulma-clean-theme/blog/" class="navbar-item ">Trading</a>
+            </div>
+            <div class="navbar-end">
+                {% if app.user %}
+                    <p class="navbar-item">Bonjour {{ app.user.username }}</p>
+                    <a class="navbar-item" href="{{ path('app_logout') }}">Se déconnecter</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>
